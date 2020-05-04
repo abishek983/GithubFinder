@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import UsersItems from './UserItems';
+import Spinner from '../layouts/Spinner';
 
-class Users extends Component {
+const Users = ({ users, loading }) => {
     /* state = {
         users: [
             {
@@ -31,11 +32,15 @@ class Users extends Component {
             }
         ]
     } */
-    render() {
+
+    if (loading) {
+        return <Spinner />
+    }
+    else {
         return (
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-3 my-3">
-                    {this.props.users.map(user => (
+                    {users.map(user => (
                         <UsersItems key={user.id} user={user} />
                     ))}
                 </div>
