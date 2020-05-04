@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UsersItems from './UserItems';
 
 class Users extends Component {
-    state = {
+    /* state = {
         users: [
             {
                 login: "mojombo",
@@ -30,12 +30,12 @@ class Users extends Component {
 
             }
         ]
-    }
+    } */
     render() {
         return (
             <div className="container">
-                <div className="row row-cols-1 row-cols-md-3">
-                    {this.state.users.map(user => (
+                <div className="row row-cols-1 row-cols-md-3 my-3">
+                    {this.props.users.map(user => (
                         <UsersItems key={user.id} user={user} />
                     ))}
                 </div>
