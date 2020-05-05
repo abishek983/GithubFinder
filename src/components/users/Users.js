@@ -38,12 +38,10 @@ const Users = ({ users, loading }) => {
     }
     else {
         return (
-            <div className="container">
-                <div className="row row-cols-1 row-cols-md-3 my-3">
-                    {users.map(user => (
-                        <UsersItems key={user.id} user={user} />
-                    ))}
-                </div>
+            <div className="row row-cols-1 row-cols-md-3 my-3">
+                {users.map(user => (
+                    <UsersItems key={user.id} user={user} />
+                ))}
             </div>
         )
     }
